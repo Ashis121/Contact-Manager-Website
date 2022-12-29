@@ -1,0 +1,30 @@
+<div class="d-flex justify-content-center align-items-center centered-container">
+    <div class="contact-manager-container shadow-contacts">
+        <div class="contacts-list">
+            <h4>Contacts</h4>
+            <hr>
+            <div class="search-field d-inline-flex">
+                <input type="text" #search><button>Search</button>
+            </div>
+            <div class="card mt-2 p-2" *ngFor="let contact of contactData ; let idx=index">
+                <div (click)="showContact(idx)">{{ contact.contactName }}</div>               
+            </div>
+        </div>
+        <div class="contact">
+            <!-- <h4>
+                Maybe Contact Name
+            </h4> -->
+            <div class="row mt-4" >
+                <div class="col text-start">
+                    <div class="card-header">{{ cname }}</div>
+                    <div class="card-header mt-5">{{ cemail }}</div>
+                    <div class="card-header mt-5">{{ cphone }}</div>
+                    <div class="card-header mt-5">{{ ctype }}</div>
+                </div>
+                <div class="col text-end ">
+                    <img src="../../assets/images/default.jpg" width="250px" height="250px" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

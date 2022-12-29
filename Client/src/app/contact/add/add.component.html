@@ -1,0 +1,54 @@
+    <app-navbar></app-navbar>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                Add Contact
+            </div>
+            <div class="card-body">
+                <form #newForm='ngForm' (ngSubmit)="onSubmit()">
+                    <div [class]="isError?'alert alert-danger':'d-none'">{{ message }}</div>
+                    <div [class]="isSuccess?'alert alert-success':'d-none'">{{ message }}</div>
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" required name="fullname" [class.is-invalid]="fname.errors && fname.touched" minlength="4" #fname="ngModel" class="form-control" placeholder="Enter contact name" [(ngModel)]="contact.cname">
+                    </div>
+                    <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="alert text-danger">
+                        <div *ngIf="fname.errors?.required">
+                            Name is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" id="email" name="email" class="form-control" [class.is-invalid]="email.errors && email.touched" #email="ngModel" required placeholder="Enter contact email" [(ngModel)]="contact.cemail">
+                    </div>
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert text-danger">
+                        <div *ngIf="email.errors?.required">
+                            Email is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="text" id="phone"  name="phone" class="form-control" [class.is-invalid]="pass.errors && pass.touched" #pass="ngModel" required placeholder="Enter contact phone number" [(ngModel)]="contact.cphone">
+                    </div>
+                    <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="alert text-danger">
+                        <div *ngIf="pass.errors?.required">
+                            Phone number is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="type" class="form-label">Type</label>
+                        <input type="text" id="type" name="type" class="form-control" [class.is-invalid]="type.errors && type.touched" #type="ngModel" required placeholder="Type" [(ngModel)]="contact.ctype">
+                    </div>
+                    <div *ngIf="type.invalid && (type.dirty || type.touched)" class="alert text-danger">
+                        <div *ngIf="type.errors?.required">
+                            Contact type is required.
+                        </div>
+                    </div>
+                    <div class="text-center mt-3" >
+                        <button class="btn btn-primary" [disabled]="newForm.form.invalid">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+

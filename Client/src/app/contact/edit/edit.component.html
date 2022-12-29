@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+    <div class="container">
+    
+        <div class="card">
+            <div class="card-header">
+                Edit Contact
+            </div>
+            <div class="card-body">
+                <form #editForm='ngForm' (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="fullname" class="form-control" placeholder="Enter contact name" [(ngModel)]="contact.cname">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" id="email" name="email" class="form-control" placeholder="Enter contact email" [(ngModel)]="contact.cemail">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="text" id="phone"  name="phone" class="form-control" placeholder="Enter contact phone number" [(ngModel)]="contact.cphone">
+                    </div>
+                    <div class="form-group">
+                        <label for="type" class="form-label">Type</label>
+                        <input type="text" id="type" name="type" class="form-control" placeholder="Type" [(ngModel)]="contact.ctype">
+                    </div>
+                    <div class="text-center mt-3" >
+                        <button class="btn btn-primary" [disabled]="editForm.form.invalid">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+

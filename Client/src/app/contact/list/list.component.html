@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<div class="d-flex justify-content-center align-items-center centered-container">
+    <div class="contact-manager-container shadow-contacts">
+        <div class="contacts-list">
+            <h4>Contacts</h4>
+            <hr>
+            <div class="all-contacts overflow-auto">
+                <!-- <div class="search-field d-inline-flex">
+                    <input type="text" #search><button>Search</button>
+                </div> -->
+                <div *ngFor="let contact of contactData ; let idx=index">
+                    <a class="each-contact color" (click)="showContact(idx)">{{ contact.contactName }}</a>               
+                </div>
+    
+            </div>
+            <a routerLink="/contacts/new" class="btn btn-custom mt-3">+ Add Contact</a>
+        </div>
+        <div class="contact">
+            <h4 *ngIf="flag; else showcontent">
+                Select a contact
+            </h4>
+            <ng-template #showcontent>
+                <div >
+                    <div class="row mt-4 details-font" >
+                        <div class="col text-start">
+                            <div class="card-header"><strong>Name : </strong>{{ cname }}</div>
+                            <div class="card-header mt-5"><strong>Email : </strong>{{ cemail }}</div>
+                            <div class="card-header mt-5"><strong>Phone : </strong>{{ cphone }}</div>
+                            <div class="card-header mt-5"><strong>Contact type : </strong>{{ ctype }}</div>
+                        </div>
+                        <div class="col text-end ">
+                            <img src="../../assets/images/default.jpg" width="250px" height="250px" alt="">
+                        </div>
+                    </div>
+                    <div class="row d-flex">
+                        <a routerLink="/contacts/edit/{{ cname }}" class="btn btn-custom mt-5"> Edit </a>
+                        <a routerLink="/contacts/delete/{{ cname }}" class="btn btn-custom mt-5"> Delete </a>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>

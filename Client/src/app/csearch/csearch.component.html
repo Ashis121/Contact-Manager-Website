@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<div class="d-flex justify-content-center align-items-center centered-container">
+            <div class="contact-manager-container shadow-contacts">
+                <div class="contact">
+                    <div >
+                        <div class="row mt-4 details-font" >
+                            <div class="col text-start">
+                                <div class="card-header"><strong>Name : </strong>{{ contact.cname }}</div>
+                                <div class="card-header mt-5"><strong>Email : </strong>{{ contact.cemail }}</div>
+                                <div class="card-header mt-5"><strong>Phone : </strong>{{ contact.cphone }}</div>
+                                <div class="card-header mt-5"><strong>Contact type : </strong>{{ contact.ctype }}</div>
+                            </div>
+                            <div class="col text-end ">
+                                <img src="../../assets/images/default.jpg" width="250px" height="250px" alt="">
+                            </div>
+                        </div>
+                        <div class="row d-flex">
+                            <a routerLink="/contacts/edit/{{ contact.cname }}" class="btn btn-custom mt-5"> Edit </a>
+                            <a routerLink="/contacts/delete/{{ contact.cname }}" class="btn btn-custom mt-5"> Delete </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>

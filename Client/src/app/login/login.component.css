@@ -1,0 +1,32 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Varela&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Mate:ital@0;1&display=swap');
+	
+
+.custom{
+    height: 100vh  ;
+    font-family: 'Mate', serif;
+}
+
+.container-custom{
+    border-radius: 20px;
+    background: #edd1fa;
+    box-shadow:  20px 20px 60px #c9b2d5,
+             -20px -20px 60px #fff0ff;
+    /* height: 40%; */
+    width: 30%;
+}
+
+.btn-color{
+    background: #fff0ff;
+}
+
+h2{
+    font-size: 35px;
+}
+
+.form-control{
+    border: none;
+    background: #fff0ff;
+    box-shadow: 0px 0px 10px rgb(224, 224, 224);
+}
